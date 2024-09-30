@@ -3,6 +3,7 @@ from django.db import models
 # Use this import to implement Min, Max validators
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.urls import reverse
+from django.utils.text import slugify
 # Create your models here.
 
 # In order to django let you use the database commands and connect with it, you have to use models.Model
@@ -26,10 +27,18 @@ class Product(models.Model):
     short_description = models.CharField(max_length=350, null=True)
     is_active = models.BooleanField(default=True)
 
+    # By using this command, we can have SlugField for our each product that instead of showing the id, it can use the slug id without manipulating the id itself
+    # 3D Printer 1 --> 3D-Printer-1
+    slug = models.SlugField(default="", null=False, db_index=True)
+
+
     def get_absolute_url(self):
-        return reverse('product_detail',args=[self.id])
+        return reverse('product_detail',args=[self.slug])
     # STR def responsibility is to present the instance
     # We use this def to get log about the Product itself
     # If we use this command we have : <QuerySet [<Product: Product object (1)>, <Product: Product object (2)>]>
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
     def __str__(self):
         return f"{self.title} - {self.price}"

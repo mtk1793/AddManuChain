@@ -8,8 +8,8 @@
     <ul>
         {% for product in products %}
             <!-- For giving addresses to each href, you either can use the below way by giving it directly to each href or you can use django reverse command -->
-            <!-- <li><a href="{% url 'product_detail' product_id=product.id %}" style="color: black;text-decoration: none">{{ product.title }} /  price : {{ product.price }} // description : {{ product.short_description }}</a></li> -->
-            <li><a href="{% url 'product_detail' product_id=product.id %}" style="color: black;text-decoration: none">{{ product.title }} /  price : {{ product.price }} // description : {{ product.short_description }}</a></li>
+{#            <!-- <li><a href="{% url 'product_detail' product_id=product.id %}" style="color: black;text-decoration: none">{{ product.title }} /  price : {{ product.price }} // description : {{ product.short_description }}</a></li> -->#}
+            <li><a href="{{ product.get_absolute_url }}" style="color: black;text-decoration: none">{{ product.title }} /  price : {{ product.price }} // description : {{ product.short_description }}</a></li>
 
         {% endfor %}
         

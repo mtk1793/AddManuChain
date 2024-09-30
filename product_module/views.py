@@ -10,10 +10,10 @@ def product_list(request):
     })
 
 
-def product_detail(request, product_id):
+def product_detail(request, slug):
     try:
         return render(request, 'product_modules/product_detail.html', {
-            'product': Product.objects.get(id=product_id)
+            'product': Product.objects.get(slug=slug)
         })
     except:
         raise Http404('Product')

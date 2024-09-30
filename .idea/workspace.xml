@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dca5ce92-cecf-4b78-8cba-6a6ed3a01e8d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/product_module/templates/product_modules/product_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_module/templates/product_modules/product_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_module/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+    <list default="true" id="dca5ce92-cecf-4b78-8cba-6a6ed3a01e8d" name="Changes" comment="PK">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/462b81bb-29b2-4e4f-bdb7-ff08ddd5eaf1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/462b81bb-29b2-4e4f-bdb7-ff08ddd5eaf1/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/619fc511-831c-410c-8e87-e499ebb931ca.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/619fc511-831c-410c-8e87-e499ebb931ca/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a84327a-27cc-4b1b-ae77-d55fc8fd8039.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a84327a-27cc-4b1b-ae77-d55fc8fd8039/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f7b76296-49e6-4f62-b40f-561d332e5dec.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f7b76296-49e6-4f62-b40f-561d332e5dec/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AddManuChain/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AddManuChain/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product_module/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_module/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_module/templates/product_modules/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/product_module/templates/product_modules/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_module/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_module/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product_module/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_module/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,27 +47,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.AddManuChain.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/AddManuChain/AddManuChain/db.sqlite3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.AddManuChain.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/AddManuChain/AddManuChain/db.sqlite3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="AddManuChain" type="Python.DjangoServer" factoryName="Django server">
       <module name="AddManuChain" />
@@ -115,11 +112,33 @@
       <updated>1727477540794</updated>
       <workItem from="1727477549159" duration="780000" />
       <workItem from="1727478337540" duration="6013000" />
-      <workItem from="1727688658973" duration="4834000" />
+      <workItem from="1727688658973" duration="5679000" />
+      <workItem from="1727725554081" duration="287000" />
     </task>
+    <task id="LOCAL-00001" summary="PK">
+      <option name="closed" value="true" />
+      <created>1727724722947</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727724722947</updated>
+    </task>
+    <task id="LOCAL-00002" summary="PK">
+      <option name="closed" value="true" />
+      <created>1727724728011</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727724728011</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="PK" />
+    <option name="LAST_COMMIT_MESSAGE" value="PK" />
   </component>
 </project>
