@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dca5ce92-cecf-4b78-8cba-6a6ed3a01e8d" name="Changes" comment="PK">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a84327a-27cc-4b1b-ae77-d55fc8fd8039.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a84327a-27cc-4b1b-ae77-d55fc8fd8039/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f7b76296-49e6-4f62-b40f-561d332e5dec.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f7b76296-49e6-4f62-b40f-561d332e5dec/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_module/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_module/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_module/templates/product_modules/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/product_module/templates/product_modules/product_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_module/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_module/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_module/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_module/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +102,7 @@
       <workItem from="1727477549159" duration="780000" />
       <workItem from="1727478337540" duration="6013000" />
       <workItem from="1727688658973" duration="5679000" />
-      <workItem from="1727725554081" duration="287000" />
+      <workItem from="1727725554081" duration="1632000" />
     </task>
     <task id="LOCAL-00001" summary="PK">
       <option name="closed" value="true" />
