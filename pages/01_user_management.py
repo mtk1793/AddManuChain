@@ -245,9 +245,7 @@ def add_user_form():
 
             if success:
                 st.success(f"User '{username}' has been created successfully!")
-                # Add a button to clear the form or view the new user
-                if st.button("Clear Form and Add Another User"):
-                    st.rerun()  # Refresh the page to clear the form
+                st.info("The form will be cleared automatically. You can add another user now.")
             else:
                 st.error(
                     "Failed to create user. The username or email may already be in use."
