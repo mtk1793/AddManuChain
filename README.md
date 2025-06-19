@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MITACS-Dashboard
 
 ## 3D Printing and Supply Chain Management Dashboard
@@ -51,3 +52,6 @@ Run the test suite with:
 `ash
 pytest
 ``n
+=======
+# AddManuChain
+>>>>>>> 91d55c27e3482d07196aa2140700a69d4213d5db
