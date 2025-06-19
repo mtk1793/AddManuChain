@@ -1,0 +1,16 @@
+id,device_id,maintenance_type,scheduled_date,completed_date,technician_id,status,description,cost,parts_used,notes,next_maintenance_date,priority
+1,1,Regular Maintenance,2024-01-10,2024-01-10,4,Completed,Routine calibration and cleaning,125.50,"Calibration tools, Cleaning supplies",All systems functioning normally,2024-04-10,Medium
+2,2,Calibration,2024-01-05,2024-01-05,4,Completed,SLA printer calibration and resin system check,89.75,"Calibration standards, Resin filters",Calibration within specifications,2024-04-05,High
+3,3,Regular Maintenance,2024-01-08,2024-01-08,8,Completed,FDM printer maintenance and nozzle replacement,67.20,"Print nozzle, Lubricants",Print quality excellent after maintenance,2024-04-08,Medium
+4,4,Deep Clean,2023-12-20,2023-12-20,4,Completed,CNC machine deep cleaning and lubrication,156.80,"Industrial cleaners, Lubricants, Filters",Machine running smoothly,2024-03-20,Medium
+5,5,Repair,2023-11-15,2023-11-18,8,Completed,Laser head replacement and alignment,890.50,"Laser head assembly, Alignment tools",Repair successful but monitoring required,2024-02-15,High
+6,6,Regular Maintenance,2024-01-12,2024-01-12,4,Completed,3D scanner calibration and lens cleaning,78.90,"Calibration targets, Lens cleaning kit",Scanner accuracy within tolerance,2024-04-12,Low
+7,7,Preventive,2023-12-30,2023-12-30,8,Completed,Injection molder preventive maintenance,234.70,"Heating elements, Temperature sensors",All systems operational,2024-03-30,Medium
+8,8,Regular Maintenance,2024-01-03,2024-01-03,4,Completed,Post-processor cleaning and calibration,145.60,"Cleaning solutions, Calibration weights",Processing quality maintained,2024-04-03,Medium
+9,9,Calibration,2023-12-25,2023-12-28,8,Completed,Environmental chamber calibration,312.40,"Temperature probes, Humidity sensors",Calibration completed successfully,2024-01-25,High
+10,10,Regular Maintenance,2024-01-15,2024-01-15,4,Completed,Packaging unit routine maintenance,98.30,"Conveyor belts, Sensors",Packaging efficiency improved,2024-04-15,Low
+11,2,Scheduled,2024-02-05,Pending,4,Scheduled,Quarterly SLA printer maintenance,,"Resin system components",Scheduled maintenance due,2024-05-05,Medium
+12,5,Scheduled,2024-02-15,Pending,8,Scheduled,Laser cutter post-repair inspection,,"Diagnostic tools",Follow-up inspection required,2024-05-15,High
+13,9,Scheduled,2024-01-25,Pending,4,Scheduled,Testing chamber quarterly calibration,,"Calibration equipment",Quarterly calibration due,2024-04-25,High
+14,1,Scheduled,2024-04-10,Pending,,Scheduled,FDM printer quarterly maintenance,,"Standard maintenance kit",Routine maintenance scheduled,2024-07-10,Medium
+15,7,Emergency,2024-01-17,Pending,8,Urgent,Injection molder temperature sensor failure,,"Temperature sensor, Wiring",Urgent repair required - production impact,2024-01-18,Critical

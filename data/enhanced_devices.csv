@@ -1,0 +1,11 @@
+id,name,device_type,model,serial_number,location,status,acquisition_date,last_maintenance_date,next_maintenance_date,manager_id,notes
+1,3D Printer Alpha,FDM Printer,ProPrint X300,SN2024001,Lab A - Station 1,Active,2023-01-15,2024-01-10,2024-04-10,1,High precision printer for prototyping
+2,3D Printer Beta,SLA Printer,ResinCraft Pro,SN2024002,Lab A - Station 2,Maintenance,2023-02-20,2024-01-05,2024-02-05,1,Currently undergoing calibration
+3,3D Printer Gamma,FDM Printer,ProPrint X500,SN2024003,Lab B - Station 1,Active,2023-03-10,2024-01-08,2024-04-08,2,Large format printer for production
+4,CNC Machine Delta,CNC Mill,PrecisionCut 2000,SN2024004,Workshop A,Active,2023-04-05,2023-12-20,2024-03-20,2,Metal cutting and milling operations
+5,Laser Cutter Epsilon,Laser Cutter,LaserMax 3000,SN2024005,Workshop B,Offline,2023-05-12,2023-11-15,2024-02-15,3,Currently offline for repairs
+6,Quality Scanner Zeta,3D Scanner,ScanPro Elite,SN2024006,Quality Lab,Active,2023-06-08,2024-01-12,2024-04-12,3,High-resolution quality inspection
+7,Injection Molder Eta,Injection Molder,MoldMaster 500,SN2024007,Production Floor,Active,2023-07-22,2023-12-30,2024-03-30,1,Plastic component manufacturing
+8,Post-Processor Theta,Post-Processing,FinishPro 200,SN2024008,Finishing Bay,Active,2023-08-14,2024-01-03,2024-04-03,2,Automated post-processing station
+9,Test Chamber Iota,Testing Equipment,TestSafe 1000,SN2024009,Testing Lab,Maintenance,2023-09-30,2023-12-25,2024-01-25,3,Environmental testing chamber
+10,Packaging Unit Kappa,Packaging Machine,PackPro 300,SN2024010,Shipping Area,Active,2023-10-18,2024-01-15,2024-04-15,1,Automated packaging system

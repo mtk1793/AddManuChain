@@ -1,0 +1,16 @@
+id,name,description,product_code,price,status,designer_id,creator_id,category_id,oem_id,blueprint_id,dimensions,weight,material_requirements,manufacturing_time,quality_grade
+1,Automotive Bracket MK-I,High-strength bracket for automotive applications,AUTO-BRK-001,125.50,Active,1,1,1,1,1,"150x75x25mm",0.25,"Aluminum 6061; Stainless Steel 316L",120,A+
+2,Medical Device Housing,Biocompatible housing for medical instruments,MED-HSG-002,450.00,Active,2,2,2,2,2,"200x100x50mm",0.15,"Titanium Ti-6Al-4V",180,AAA
+3,Aerospace Component Delta,Lightweight component for aerospace industry,AERO-CMP-003,850.75,Active,1,3,3,3,3,"300x150x75mm",0.45,"Carbon Fiber PETG; Titanium Ti-6Al-4V",240,A+
+4,Consumer Electronics Case,Protective case for electronic devices,ELEC-CSE-004,75.25,Active,3,1,4,4,4,"120x80x15mm",0.08,"ABS Black; TPU Flexible Red",90,A
+5,Industrial Gear Set,Precision gear set for industrial machinery,IND-GER-005,320.00,Active,2,2,5,1,5,"100x100x30mm",0.35,"Nylon PA12; Stainless Steel 316L",150,A+
+6,Prototype Fixture Tool,Custom fixture for manufacturing process,TOOL-FIX-006,185.40,In Development,1,3,6,5,6,"250x200x100mm",0.65,"Aluminum 6061; PLA Natural",200,B+
+7,Jewelry Ring Setting,Precision ring setting for gemstones,JWL-SET-007,95.60,Active,3,1,7,6,7,"25x25x8mm",0.012,"Castable Resin",45,AAA
+8,Drone Frame Assembly,Lightweight frame for UAV applications,DRN-FRM-008,275.80,Active,2,2,8,7,8,"400x400x50mm",0.28,"Carbon Fiber PETG",165,A+
+9,Educational Model Heart,Anatomical heart model for education,EDU-HRT-009,65.30,Active,1,3,9,8,9,"150x120x100mm",0.18,"PLA Natural; TPU Flexible Red",75,A
+10,Prototype Sensor Mount,Custom mount for sensor installations,SEN-MNT-010,42.90,Active,3,1,10,9,10,"80x60x40mm",0.055,"PETG Clear; ABS Black",60,B+
+11,Automotive Interior Trim,Custom interior trim piece,AUTO-TRM-011,88.75,Active,2,2,1,1,11,"300x50x20mm",0.12,"ABS Black; Wood-filled PLA",85,A
+12,Medical Surgical Guide,Patient-specific surgical guide,MED-GDE-012,380.50,Active,1,3,2,2,12,"100x80x25mm",0.075,"Medical-grade resin",95,AAA
+13,Aerospace Duct Component,Air duct component for aircraft,AERO-DCT-013,620.25,In Development,3,1,3,3,13,"250x150x100mm",0.32,"Nylon PA12; Aluminum 6061",210,A+
+14,Electronics Cooling Fan,Custom cooling solution for electronics,ELEC-FAN-014,156.80,Active,2,2,4,4,14,"120x120x25mm",0.095,"ABS Black; TPU Flexible Red",105,A
+15,Industrial Valve Body,High-pressure valve body component,IND-VLV-015,425.60,Active,1,3,5,1,15,"150x100x80mm",0.45,"Stainless Steel 316L; Ceramic Powder",185,A+

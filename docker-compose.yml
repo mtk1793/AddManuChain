@@ -1,0 +1,28 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8502:8501" # Changed host port to 8502
+    env_file:
+      - .env
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    command: bash -c "python init_db.py && streamlit run app.py --server.port=8501 --server.address=0.0.0.0"
+    restart: always
+
+  db:
+    image: postgres:13
+    ports:
+      - "5433:5432"  # Changed host port to 5433
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=mitacs_dashboard
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:

@@ -1,0 +1,16 @@
+id,user_id,title,message,notification_type,priority,status,related_entity_type,related_entity_id,created_at,read_at,action_required,action_url
+1,1,Device Maintenance Due,3D Printer Beta requires calibration maintenance by Feb 5th,Maintenance,High,Unread,Device,2,2024-01-17 08:00:00,,true,/devices/2/maintenance
+2,2,Print Job Completed,Medical Housing Shell print has completed successfully,Print Job,Medium,Read,Print Job,2,2024-01-16 18:35:00,2024-01-16 19:00:00,false,/print-jobs/2
+3,3,Quality Inspection Required,Aerospace Component Delta requires final inspection,Quality,High,Unread,Product,3,2024-01-17 09:15:00,,true,/quality/inspection/13
+4,1,Material Low Stock,PLA Natural stock is below minimum threshold (10kg),Inventory,Medium,Unread,Material,1,2024-01-17 07:30:00,,true,/materials/1/reorder
+5,2,Certification Expiring,ITAR Registration expires in 30 days,Certification,High,Read,Certification,13,2024-01-17 06:00:00,2024-01-17 08:30:00,true,/certifications/13/renew
+6,3,Print Job Failed,Educational Heart Model print failed - filament jam,Print Job,High,Unread,Print Job,4,2024-01-16 17:32:00,,true,/print-jobs/4/troubleshoot
+7,1,New User Registration,Anna Williams has registered for system access,User Management,Low,Read,User,10,2024-01-16 16:45:00,2024-01-16 17:00:00,true,/users/10/approve
+8,2,Blueprint Updated,Sensor Mount Bracket blueprint updated to v1.5,Blueprint,Medium,Unread,Blueprint,10,2024-01-16 15:20:00,,false,/blueprints/10
+9,3,Device Offline,Laser Cutter Epsilon has gone offline unexpectedly,Device,High,Read,Device,5,2024-01-16 14:15:00,2024-01-16 14:30:00,true,/devices/5/diagnostics
+10,1,Quality Check Passed,Jewelry Ring Setting passed precision inspection,Quality,Low,Unread,Quality,4,2024-01-13 12:15:00,,false,/quality/reports/4
+11,2,Material Delivery Scheduled,Titanium Ti-6Al-4V delivery scheduled for Jan 20th,Inventory,Medium,Read,Material,13,2024-01-17 10:00:00,2024-01-17 10:30:00,false,/materials/13/receiving
+12,3,Print Queue Updated,3 new print jobs added to production queue,Print Job,Low,Unread,Print Job,,2024-01-17 11:45:00,,false,/print-jobs/queue
+13,1,Maintenance Completed,Post-Processor Theta maintenance completed successfully,Maintenance,Low,Read,Device,8,2024-01-03 16:30:00,2024-01-04 08:00:00,false,/devices/8/history
+14,2,Certification Approved,FDA 510(k) certification has been approved,Certification,Medium,Unread,Certification,2,2024-01-17 12:20:00,,false,/certifications/2
+15,3,System Backup Complete,Daily database backup completed successfully,System,Low,Read,System,,2024-01-17 02:00:00,2024-01-17 08:00:00,false,/admin/backups

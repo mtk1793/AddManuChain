@@ -1,0 +1,808 @@
+/* Custom styles for MITACS Dashboard */
+
+/* Root variables for consistent theming */
+:root {
+    --primary-color: #0066cc;
+    --primary-hover: #0052a3;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #dee2e6;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Authentication styling for login page */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.auth-form-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.auth-form-box h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.auth-form-box img {
+    margin-bottom: 1rem;
+}
+
+.auth-form-box input {
+    margin-bottom: 1rem;
+}
+
+.login-button button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.login-button button:hover {
+    background-color: var(--primary-hover);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Full width container with improved styling */
+.stApp {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* Main content area */
+.main .block-container {
+    max-width: 100% !important;
+    padding: 1rem 2rem !important;
+    margin: 0 !important;
+}
+
+/* Global animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 102, 204, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+    }
+}
+
+/* Enhanced button styling with proper contrast */
+.stButton > button, button {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)) !important;
+    color: var(--white) !important;
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.025em !important;
+    transition: var(--transition) !important;
+    box-shadow: var(--box-shadow) !important;
+    cursor: pointer !important;
+    text-transform: none !important;
+    animation: slideInUp 0.5s ease-out !important;
+}
+
+.stButton > button:hover, button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3) !important;
+    background: linear-gradient(135deg, var(--primary-hover), #003d7a) !important;
+    color: var(--white) !important;
+}
+
+.stButton > button:active, button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2) !important;
+}
+
+/* Secondary button variant */
+.stButton > button.secondary {
+    background: transparent !important;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color) !important;
+}
+
+.stButton > button.secondary:hover {
+    background: var(--primary-color) !important;
+    color: var(--white) !important;
+}
+
+/* Success button variant */
+.stButton > button.success {
+    background: linear-gradient(135deg, var(--success-color), #1e7e34) !important;
+    color: var(--white) !important;
+}
+
+.stButton > button.success:hover {
+    background: linear-gradient(135deg, #1e7e34, #155724) !important;
+}
+
+/* Danger button variant */
+.stButton > button.danger {
+    background: linear-gradient(135deg, var(--danger-color), #c82333) !important;
+    color: var(--white) !important;
+}
+
+.stButton > button.danger:hover {
+    background: linear-gradient(135deg, #c82333, #bd2130) !important;
+}
+
+/* Enhanced Sidebar with animations */
+div[data-testid="stSidebar"] > div:first-child {
+    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    border-right: 3px solid var(--primary-color) !important;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1) !important;
+    animation: slideInLeft 0.6s ease-out !important;
+}
+
+div[data-testid="stSidebar"] h1 {
+    color: var(--primary-color) !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    padding-top: 1rem !important;
+    text-align: center !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    animation: slideInUp 0.8s ease-out !important;
+}
+
+/* Enhanced sidebar buttons */
+div[data-testid="stSidebar"] .stButton>button {
+    background: linear-gradient(135deg, transparent, rgba(0, 102, 204, 0.05)) !important;
+    color: #333 !important;
+    border: 2px solid transparent !important;
+    text-align: left !important;
+    padding: 0.875rem 1.25rem !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    border-radius: var(--border-radius) !important;
+    margin: 0.25rem 0.5rem !important;
+    transition: var(--transition) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+div[data-testid="stSidebar"] .stButton>button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+div[data-testid="stSidebar"] .stButton>button:hover::before {
+    left: 100%;
+}
+
+div[data-testid="stSidebar"] .stButton>button:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)) !important;
+    color: var(--white) !important;
+    border-color: var(--primary-color) !important;
+    transform: translateX(5px) !important;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3) !important;
+}
+
+div[data-testid="stSidebar"] .stButton>button:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3) !important;
+    animation: glow 2s infinite !important;
+}
+
+/* Active page button styling */
+div[data-testid="stSidebar"] .stButton>button.active-page {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)) !important;
+    color: var(--white) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4) !important;
+}
+
+/* Sidebar logo enhancement */
+div[data-testid="stSidebar"] img {
+    display: block !important;
+    margin: 0 auto 1.5rem auto !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: var(--transition) !important;
+    animation: slideInUp 0.6s ease-out !important;
+}
+
+div[data-testid="stSidebar"] img:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Enhanced dividers */
+div[data-testid="stSidebar"] hr {
+    border: none !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent) !important;
+    margin: 1rem 0 !important;
+    animation: slideInLeft 0.8s ease-out !important;
+}
+
+/* Sidebar text styling */
+div[data-testid="stSidebar"] .stSubheader {
+    color: var(--secondary-color) !important;
+    font-size: 0.875rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    margin: 1rem 0 0.5rem 0 !important;
+    padding: 0 1rem !important;
+    animation: slideInLeft 1s ease-out !important;
+}
+
+div[data-testid="stSidebar"] .stCaption {
+    font-size: 0.75rem !important;
+    color: var(--secondary-color) !important;
+    padding: 0 1rem !important;
+    animation: slideInLeft 1.2s ease-out !important;
+}
+
+/* Enhanced fade-in animations with stagger effect */
+.fade-in-section {
+    animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.fade-in-section:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-section:nth-child(2) { animation-delay: 0.2s; }
+.fade-in-section:nth-child(3) { animation-delay: 0.3s; }
+.fade-in-section:nth-child(4) { animation-delay: 0.4s; }
+.fade-in-section:nth-child(5) { animation-delay: 0.5s; }
+
+/* Enhanced section headers */
+.section-header {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+    border: none !important;
+    border-left: 5px solid var(--primary-color) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 1rem 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: var(--box-shadow) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    animation: slideInUp 0.6s ease-out !important;
+}
+
+.section-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(0, 102, 204, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.section-header h3 {
+    margin: 0 !important;
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Enhanced metric cards */
+.metric-card {
+    background: linear-gradient(135deg, var(--white), #f8f9fa) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: var(--box-shadow) !important;
+    transition: var(--transition) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    animation: slideInUp 0.8s ease-out !important;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--info-color), var(--success-color));
+}
+
+.metric-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+    animation: pulse 0.6s ease-in-out !important;
+}
+
+.metric-value {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: var(--primary-color) !important;
+    margin: 0.5rem 0 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.metric-label {
+    font-size: 0.875rem !important;
+    color: var(--secondary-color) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Advanced Glassmorphism Effects for Metric Cards */
+div[data-testid="metric-container"] {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 1.5rem !important;
+    margin: 1rem 0 !important;
+    transition: var(--transition) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+div[data-testid="metric-container"]:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    background: rgba(255, 255, 255, 0.35) !important;
+}
+
+div[data-testid="metric-container"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.8s;
+}
+
+div[data-testid="metric-container"]:hover::before {
+    left: 100%;
+}
+
+/* Enhanced Metric Values */
+[data-testid="metric-container"] [data-testid="metric-value"] {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, var(--primary-color), var(--info-color)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    animation: slideInUp 1s ease-out !important;
+}
+
+[data-testid="metric-container"] [data-testid="metric-label"] {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #4a5568 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    margin-top: 0.5rem !important;
+}
+
+/* Enhanced Data Frame Styling */
+.dataframe {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 15px !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+    animation: slideInUp 0.6s ease-out !important;
+}
+
+.dataframe th {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.025em !important;
+    padding: 1rem !important;
+    border: none !important;
+}
+
+.dataframe td {
+    padding: 0.875rem 1rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.dataframe tr:hover td {
+    background-color: rgba(0, 102, 204, 0.05) !important;
+}
+
+/* Enhanced Chart Container */
+div[data-testid="stPlotlyChart"] {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    margin: 1rem 0 !important;
+    animation: slideInUp 0.8s ease-out !important;
+}
+
+/* Enhanced Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 15px !important;
+    padding: 0.5rem !important;
+    margin-bottom: 2rem !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent !important;
+    border-radius: 10px !important;
+    color: #6c757d !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: var(--transition) !important;
+    border: none !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3) !important;
+}
+
+/* Enhanced Select Boxes */
+.stSelectbox > div > div {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(0, 102, 204, 0.2) !important;
+    border-radius: 12px !important;
+    transition: var(--transition) !important;
+}
+
+.stSelectbox > div > div:hover {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2) !important;
+}
+
+/* Enhanced Text Inputs */
+.stTextInput > div > div > input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(0, 102, 204, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 0.875rem 1rem !important;
+    font-size: 1rem !important;
+    transition: var(--transition) !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1) !important;
+    background: white !important;
+}
+
+/* Enhanced Number Inputs */
+.stNumberInput > div > div > input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(0, 102, 204, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 0.875rem 1rem !important;
+    transition: var(--transition) !important;
+}
+
+.stNumberInput > div > div > input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1) !important;
+}
+
+/* Enhanced Date Inputs */
+.stDateInput > div > div > input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(0, 102, 204, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 0.875rem 1rem !important;
+    transition: var(--transition) !important;
+}
+
+/* Enhanced Text Areas */
+.stTextArea > div > div > textarea {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(0, 102, 204, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 0.875rem 1rem !important;
+    transition: var(--transition) !important;
+}
+
+.stTextArea > div > div > textarea:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1) !important;
+}
+
+/* Loading and progress indicators */
+.stSpinner {
+    animation: pulse 1.5s infinite !important;
+}
+
+.stProgress > div > div > div {
+    background: linear-gradient(90deg, var(--primary-color), var(--info-color)) !important;
+    border-radius: 10px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.stProgress > div > div > div::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: progressShine 2s infinite;
+}
+
+@keyframes progressShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Enhanced Calendar Styles for Maintenance Schedule */
+.maintenance-calendar {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.calendar-header {
+    background: linear-gradient(135deg, #0066cc, #004499);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: #e0e0e0;
+}
+
+.calendar-day-header {
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.calendar-day {
+    background-color: white;
+    min-height: 80px;
+    padding: 0.25rem;
+    position: relative;
+    border: 1px solid #dee2e6;
+    transition: all 0.2s ease;
+}
+
+.calendar-day:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.calendar-day.today {
+    background-color: #e3f2fd;
+    border: 2px solid #0066cc;
+}
+
+.calendar-day.has-maintenance {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+.calendar-day.past-date {
+    background-color: #f5f5f5;
+    color: #999;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.maintenance-event {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 0.2rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
+.maintenance-event:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.maintenance-event.regular {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+}
+
+.maintenance-event.calibration {
+    background: linear-gradient(135deg, #fd7e14, #e55a00);
+}
+
+.maintenance-event.deep-clean {
+    background: linear-gradient(135deg, #6f42c1, #5a2d8b);
+}
+
+.calendar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+/* Responsive calendar */
+@media (max-width: 768px) {
+    .calendar-day {
+        min-height: 60px;
+        font-size: 0.8rem;
+    }
+    
+    .maintenance-event {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.2rem;
+    }
+    
+    .calendar-legend {
+        font-size: 0.8rem;
+    }
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+    .main .block-container {
+        padding: 0.5rem 1rem !important;
+    }
+    
+    div[data-testid="metric-container"] {
+        padding: 1rem !important;
+        margin: 0.5rem 0 !important;
+    }
+    
+    [data-testid="metric-container"] [data-testid="metric-value"] {
+        font-size: 2rem !important;
+    }
+    
+    div[data-testid="column"] > div {
+        margin: 0.25rem !important;
+        padding: 1rem !important;
+    }
+}
+

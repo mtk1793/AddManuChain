@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddManuChain - Complete 3D Additive Manufacturing Management Platform</title>
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #00a0ff;
+            --accent-color: #ff6b35;
+            --dark-bg: #0a0e1a;
+            --card-bg: #1a1f35;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a8b8;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(0,102,204,0.1) 0%, rgba(0,160,255,0.1) 100%);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a0ff, #0066cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--gradient-3);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(79, 172, 254, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #fff, #a0a8b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: var(--secondary-color);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .dashboard-demo {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .metric-card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 14, 26, 0.98);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(0, 160, 255, 0.1);
+        }
+
+        .stats-section {
+            background: var(--gradient-1);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .testimonials {
+            padding: 100px 0;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer {
+            background: var(--card-bg);
+            padding: 60px 0 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-cube"></i> AddManuChain
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>AddManuChain</h1>
+                <p>Revolutionary 3D Additive Manufacturing Management Platform - Streamline Your Entire Supply Chain with AI-Powered Intelligence</p>
+                <div>
+                    <a href="#dashboard" class="cta-button pulse">Explore Platform</a>
+                    <a href="#contact" class="cta-button secondary">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Overview -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Complete Manufacturing Ecosystem</h2>
+            <div class="feature-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>User Management</h3>
+                    <p>Comprehensive user role management with advanced permissions, authentication, and access control for secure operations across your manufacturing network.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Device Tracking</h3>
+                    <p>Real-time monitoring and management of all 3D printing devices, IoT sensors, and manufacturing equipment with predictive maintenance capabilities.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Materials Inventory</h3>
+                    <p>Advanced material tracking system with automatic reordering, quality monitoring, and compatibility verification for optimal production efficiency.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Product Lifecycle</h3>
+                    <p>End-to-end product management from design to delivery, including version control, quality assurance, and performance analytics.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>OEM Integration</h3>
+                    <p>Seamless integration with Original Equipment Manufacturers for streamlined supply chain coordination and automated procurement processes.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certification Management</h3>
+                    <p>Automated compliance tracking with certification authorities, ensuring all products meet industry standards and regulatory requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Demo Section -->
+    <section class="section" id="dashboard">
+        <div class="container">
+            <h2 class="section-title fade-in">Live Dashboard Analytics</h2>
+            <div class="dashboard-demo fade-in">
+                <h3 style="text-align: center; margin-bottom: 30px; color: var(--text-primary);">Real-Time Manufacturing Metrics</h3>
+                <div class="dashboard-grid">
+                    <div class="metric-card">
+                        <div class="metric-value" id="activeDevices">247</div>
+                        <div class="metric-label">Active Devices</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="totalSavings">$847K</div>
+                        <div class="metric-label">Cost Savings</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="efficiency">94.2%</div>
+                        <div class="metric-label">Production Efficiency</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="qualityScore">98.7%</div>
+                        <div class="metric-label">Quality Score</div>
+                    </div>
+                </div>
+                
+                <!-- Chart Container -->
+                <div class="chart-container">
+                    <canvas id="productionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Modules Section -->
+    <section class="section" id="modules">
+        <div class="container">
+            <h2 class="section-title fade-in">17 Core Platform Modules</h2>
+            <div class="feature-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3>Print Requests</h3>
+                    <p>Intelligent print queue management with automated scheduling, priority optimization, and resource allocation for maximum throughput.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training Records</h3>
+                    <p>Comprehensive training management system tracking operator certifications, skill development, and compliance requirements.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-vials"></i>
+                    </div>
+                    <h3>Testing Labs</h3>
+                    <p>Integrated laboratory management for material testing, quality verification, and certification processes with automated reporting.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Advanced QA protocols with automated inspection, statistical process control, and continuous improvement tracking.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Quality Control</h3>
+                    <p>Real-time quality control monitoring with configurable frequency percentages and automated deviation alerts.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Payment Processing</h3>
+                    <p>Integrated financial management with automated billing, payment tracking, and comprehensive cost analysis tools.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Subscription Management</h3>
+                    <p>Flexible subscription models with usage tracking, billing automation, and service level management capabilities.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Maintenance Logs</h3>
+                    <p>Predictive maintenance system with automated scheduling, parts tracking, and performance optimization algorithms.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Incident Reporting</h3>
+                    <p>Comprehensive incident management with automated escalation, root cause analysis, and preventive action tracking.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Smart Notifications</h3>
+                    <p>AI-powered notification system with customizable alerts, escalation protocols, and multi-channel communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Platform Performance Metrics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>$2.4M+</h3>
+                    <p>Total Cost Savings Generated</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1,200+</h3>
+                    <p>Manufacturing Devices Managed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99.8%</h3>
+                    <p>System Uptime Reliability</p>
+                </div>
+                <div class="stat-item">
+                    <h3>47</h3>
+                    <p>Countries Served Globally</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Advanced Platform Capabilities</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-top: 50px;">
+                <div class="feature-card fade-in" style="text-align: left;">
+                    <h3><i class="fas fa-robot" style="color: var(--secondary-color); margin-right: 10px;"></i>AI-Powered Optimization</h3>
+                    <p>Machine learning algorithms continuously optimize production schedules, predict maintenance needs, and enhance quality control processes for maximum efficiency.</p>
+                    <ul style="margin-top: 15px; color: var(--text-secondary);">
+                        <li>• Predictive analytics for demand forecasting</li>
+                        <li>• Automated resource allocation</li>
+                        <li>• Intelligent quality prediction</li>
+                        <li>• Performance optimization algorithms</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card fade-in" style="text-align: left;">
+                    <h3><i class="fas fa-cloud" style="color: var(--secondary-color); margin-right: 10px;"></i>Cloud Integration</h3>
+                    <p>Seamlessly integrate with leading cloud platforms for scalable computing, secure data storage, and global accessibility across your manufacturing network.</p>
+                    <ul style="margin-top: 15px; color: var(--text-secondary);">
+                        <li>• Multi-cloud deployment support</li>
+                        <li>• Real-time data synchronization</li>
+                        <li>• Enterprise-grade security</li>
+                        <li>• Global edge computing</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card fade-in" style="text-align: left;">
+                    <h3><i class="fas fa-chart-line" style="color: var(--secondary-color); margin-right: 10px;"></i>Advanced Analytics</h3>
+                    <p>Comprehensive business intelligence with customizable dashboards, real-time reporting, and actionable insights for data-driven decision making.</p>
+                    <ul style="margin-top: 15px; color: var(--text-secondary);">
+                        <li>• Custom KPI dashboards</li>
+                        <li>• Automated report generation</li>
+                        <li>• Trend analysis and forecasting</li>
+                        <li>• Performance benchmarking</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card fade-in" style="text-align: left;">
+                    <h3><i class="fas fa-lock" style="color: var(--secondary-color); margin-right: 10px;"></i>Enterprise Security</h3>
+                    <p>Military-grade security protocols with encryption, multi-factor authentication, and compliance frameworks for the most demanding environments.</p>
+                    <ul style="margin-top: 15px; color: var(--text-secondary);">
+                        <li>• End-to-end encryption</li>
+                        <li>• Role-based access control</li>
+                        <li>• Audit trail management</li>
+                        <li>• Compliance automation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Clients Say</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div class="testimonial-card fade-in">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-user" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">Manufacturing Director, TechCorp</p>
+                        </div>
+                    </div>
+                    <p>"AddManuChain transformed our production efficiency by 40%. The real-time monitoring and predictive maintenance features alone saved us over $200K in the first year."</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-user" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">CTO, InnovateLab</p>
+                        </div>
+                    </div>
+                    <p>"The comprehensive certification management and quality control modules helped us achieve ISO compliance 60% faster than traditional methods."</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-user" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h4>Elena Rodriguez</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">Operations Manager, FutureMfg</p>
+                        </div>
+                    </div>
+                    <p>"The integrated supply chain optimization reduced our material waste by 35% while improving delivery times. Absolutely game-changing platform."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Get Started Today</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;" class="fade-in">
+                <div>
+                    <h3 style="font-size: 2rem; margin-bottom: 20px;">Transform Your Manufacturing</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 30px; color: var(--text-secondary); line-height: 1.6;">
+                        Join industry leaders who trust AddManuChain to optimize their 3D additive manufacturing operations. Get a personalized demo and see how our platform can revolutionize your supply chain.
+                    </p>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--text-primary); margin-bottom: 15px;">Key Benefits:</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8;">
+                            <li>• Reduce operational costs by up to 45%</li>
+                            <li>• Improve production efficiency by 40%</li>
+                            <li>• Achieve 99.8% quality compliance</li>
+                            <li>• Accelerate certification processes</li>
+                            <li>• Real-time supply chain visibility</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; margin-bottom: 30px;">
+                        <a href="mailto:info@addmanuchain.com" class="cta-button">
+                            <i class="fas fa-envelope" style="margin-right: 8px;"></i>Email Us
+                        </a>
+                        <a href="tel:+1234567890" class="cta-button secondary">
+                            <i class="fas fa-phone" style="margin-right: 8px;"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 25px; text-align: center;">Request Your Demo</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Business Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="industry">Industry Sector</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select Your Industry</option>
+                                <option value="aerospace">Aerospace & Defense</option>
+                                <option value="automotive">Automotive</option>
+                                <option value="medical">Medical Devices</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="consumer">Consumer Products</option>
+                                <option value="industrial">Industrial Manufacturing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tell us about your manufacturing challenges</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Describe your current 3D printing operations and pain points..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" style="width: 100%; margin: 0;">
+                            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Schedule Demo
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4><i class="fas fa-cube"></i> AddManuChain</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">Revolutionizing 3D additive manufacturing with intelligent supply chain management and comprehensive platform solutions.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: var(--secondary-color); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--secondary-color); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--secondary-color); font-size: 1.5rem;"><i class="fab fa-github"></i></a>
+                        <a href="#" style="color: var(--secondary-color); font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>Platform Modules</h4>
+                    <a href="#">User Management</a>
+                    <a href="#">Device Tracking</a>
+                    <a href="#">Materials Inventory</a>
+                    <a href="#">Quality Control</a>
+                    <a href="#">Certification Management</a>
+                </div>
+                
+                <div>
+                    <h4>Solutions</h4>
+                    <a href="#">Supply Chain Optimization</a>
+                    <a href="#">Predictive Maintenance</a>
+                    <a href="#">Quality Assurance</a>
+                    <a href="#">Cost Management</a>
+                    <a href="#">Compliance Tracking</a>
+                </div>
+                
+                <div>
+                    <h4>Support</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">API Reference</a>
+                    <a href="#">Training Center</a>
+                    <a href="#">Technical Support</a>
+                    <a href="#">Community Forum</a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; color: var(--text-secondary);">
+                <p>&copy; 2024 AddManuChain. All rights reserved. | Privacy Policy | Terms of Service | Security</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00a0ff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00a0ff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    gsap.to(entry.target, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: 'power2.out'
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animated counter function
+        function animateCounter(element, target) {
+            gsap.to({ val: 0 }, {
+                val: target,
+                duration: 2,
+                ease: 'power2.out',
+                onUpdate: function() {
+                    if (element.id === 'totalSavings') {
+                        element.textContent = '$' + Math.round(this.targets()[0].val) + 'K';
+                    } else if (element.id === 'efficiency' || element.id === 'qualityScore') {
+                        element.textContent = this.targets()[0].val.toFixed(1) + '%';
+                    } else {
+                        element.textContent = Math.round(this.targets()[0].val);
+                    }
+                }
+            });
+        }
+
+        // Animate counters when dashboard section is visible
+        const dashboardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(document.getElementById('activeDevices'), 247);
+                    animateCounter(document.getElementById('totalSavings'), 847);
+                    animateCounter(document.getElementById('efficiency'), 94.2);
+                    animateCounter(document.getElementById('qualityScore'), 98.7);
+                    dashboardObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        dashboardObserver.observe(document.getElementById('dashboard'));
+
+        // Chart.js Configuration
+        const ctx = document.getElementById('productionChart').getContext('2d');
+        const productionChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Production Output',
+                    data: [65, 78, 90, 81, 95, 88, 92, 97, 85, 91, 98, 102],
+                    borderColor: '#00a0ff',
+                    backgroundColor: 'rgba(0, 160, 255, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Quality Score',
+                    data: [92, 94, 96, 93, 97, 95, 98, 99, 96, 97, 98, 99],
+                    borderColor: '#ff6b35',
+                    backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#a0a8b8'
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#a0a8b8'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Button hover animations
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                anime({
+                    targets: button,
+                    scale: 1.05,
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+
+            button.addEventListener('mouseleave', () => {
+                anime({
+                    targets: button,
+                    scale: 1,
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+        });
+
+        // Feature card hover effects
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                anime({
+                    targets: card,
+                    translateY: -10,
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                anime({
+                    targets: card,
+                    translateY: 0,
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Animate submit button
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check" style="margin-right: 8px;"></i>Demo Scheduled!';
+                submitBtn.style.background = '#4ade80';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                    this.reset();
+                }, 2000);
+            }, 2000);
+        });
+
+        // Real-time metric updates simulation
+        setInterval(() => {
+            const activeDevices = document.getElementById('activeDevices');
+            const currentValue = parseInt(activeDevices.textContent);
+            const newValue = currentValue + Math.floor(Math.random() * 5) - 2;
+            if (newValue > 240) {
+                animateCounter(activeDevices, Math.max(newValue, 245));
+            }
+        }, 10000);
+
+        // Initialize animations
+        gsap.set('.fade-in', { opacity: 0, y: 30 });
+        
+        // Hero section initial animation
+        gsap.to('.hero-content', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power2.out',
+            delay: 0.5
+        });
+    </script>
+</body>
+</html>

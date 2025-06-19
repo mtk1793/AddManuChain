@@ -1,0 +1,16 @@
+id,inspection_id,product_id,print_job_id,inspector_id,inspection_date,inspection_type,status,overall_grade,dimensional_accuracy,surface_finish,material_properties,functional_test,defects_found,corrective_actions,notes,created_at,updated_at
+1,QI-2024-001,1,1,3,2024-01-15,Final Inspection,Passed,A+,98.5,Excellent,Compliant,Passed,None,None,Excellent dimensional accuracy achieved,2024-01-15 13:00:00,2024-01-15 13:30:00
+2,QI-2024-002,2,2,3,2024-01-16,Biocompatibility,Passed,AAA,99.2,Excellent,Verified,Passed,None,None,Medical grade requirements met,2024-01-16 19:00:00,2024-01-16 19:45:00
+3,QI-2024-003,5,5,7,2024-01-14,Structural Test,Passed,A+,97.8,Good,Compliant,Passed,Minor surface roughness,Sanding recommended,Carbon fiber layup excellent,2024-01-14 16:30:00,2024-01-14 17:00:00
+4,QI-2024-004,6,6,3,2024-01-13,Precision Check,Passed,AAA,99.7,Excellent,Verified,Passed,None,None,Jewelry-grade precision achieved,2024-01-13 12:00:00,2024-01-13 12:15:00
+5,QI-2024-005,9,9,3,2024-01-15,Functional Test,Passed,A,96.5,Good,Compliant,Passed,Minor fitting tolerance,Tolerance adjustment needed,Electronics case fits well,2024-01-15 16:15:00,2024-01-15 16:45:00
+6,QI-2024-006,11,11,7,2024-01-12,Flexibility Test,Passed,A,95.2,Good,Compliant,Passed,Acceptable wear,None,TPU flexibility within spec,2024-01-12 16:45:00,2024-01-12 17:15:00
+7,QI-2024-007,12,12,3,2024-01-11,Tool Validation,Passed,A,97.1,Excellent,Compliant,Passed,None,None,Manufacturing fixture ready,2024-01-11 12:45:00,2024-01-11 13:15:00
+8,QI-2024-008,14,14,3,2024-01-10,Medical Validation,Passed,AAA,99.5,Excellent,Verified,Passed,None,None,Surgical guide approved for use,2024-01-10 18:00:00,2024-01-10 18:30:00
+9,QI-2024-009,4,4,7,2024-01-16,Print Failure Analysis,Failed,F,N/A,Poor,N/A,Failed,Filament jam; Layer separation,Restart with new settings,Failed print requires reprocessing,2024-01-16 17:45:00,2024-01-16 18:00:00
+10,QI-2024-010,13,13,7,2024-01-16,Pre-failure Analysis,Failed,F,N/A,Poor,N/A,Failed,Layer adhesion failure,Temperature calibration needed,Print failure investigation complete,2024-01-16 12:00:00,2024-01-16 12:30:00
+11,QI-2024-011,1,,,3,2024-01-10,Incoming Inspection,Passed,A,N/A,N/A,Verified,N/A,None,None,Material batch quality verified,2024-01-10 09:00:00,2024-01-10 09:30:00
+12,QI-2024-012,2,,,7,2024-01-12,Process Validation,Passed,A+,N/A,N/A,Compliant,Passed,None,None,Manufacturing process validated,2024-01-12 10:15:00,2024-01-12 11:00:00
+13,QI-2024-013,3,,,3,2024-01-14,Design Review,Passed,A+,N/A,N/A,N/A,Passed,None,None,Aerospace component design approved,2024-01-14 08:30:00,2024-01-14 09:15:00
+14,QI-2024-014,8,,,7,2024-01-16,In-Process,In Progress,B+,95.8,Good,Pending,Pending,Minor deviation,Monitor closely,Currently under inspection,2024-01-16 14:00:00,2024-01-16 15:30:00
+15,QI-2024-015,15,,,3,2024-01-17,Scheduled,Pending,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Scheduled for tomorrow morning,2024-01-17 16:00:00,2024-01-17 16:00:00
