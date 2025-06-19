@@ -225,7 +225,7 @@ def add_quality_test_form():
 
                     if success:
                         st.success("Quality test added successfully.")
-                        st.experimental_rerun()  # Force rerun to update visualizations
+                        st.rerun()  # Force rerun to update visualizations
                     else:
                         st.error("Failed to add quality test. Please check the entered data.")
                 except Exception as e:

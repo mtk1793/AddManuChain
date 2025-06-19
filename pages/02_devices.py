@@ -41,7 +41,7 @@ def display_devices():
 
     # Add a refresh button
     if st.button("🔄 Refresh Devices"):
-        st.experimental_rerun()
+        st.rerun()
 
     # Filters
     col1, col2, col3 = st.columns(3)
@@ -253,13 +253,13 @@ def display_device_details(device_id):
                         st.session_state[f"show_modify_form_{device_id}"] = False
                         st.success("Device updated successfully.")
                         time.sleep(1)
-                        st.experimental_rerun()
+                        st.rerun()
                     else:
                         st.error("Failed to update device.")
                 
                 if cancel_modify:
                     st.session_state[f"show_modify_form_{device_id}"] = False
-                    st.experimental_rerun()
+                    st.rerun()
 
         # Delete Confirmation
         if st.session_state[f"show_delete_confirm_{device_id}"]:
@@ -273,14 +273,14 @@ def display_device_details(device_id):
                         st.session_state[f"show_delete_confirm_{device_id}"] = False
                         st.success("Device deleted successfully.")
                         time.sleep(1)
-                        st.experimental_rerun()
+                        st.rerun()
                     else:
                         st.error("Failed to delete device.")
             
             with col2:
                 if st.button("Cancel", key=f"cancel_delete_{device_id}"):
                     st.session_state[f"show_delete_confirm_{device_id}"] = False
-                    st.experimental_rerun()
+                    st.rerun()
 
         # Display maintenance form if button is clicked
         if (
@@ -311,18 +311,18 @@ def display_device_details(device_id):
                         maintenance_type=maintenance_type,
                         description=description,
                     )
-
+                    
                     if success:
                         st.session_state.show_maintenance_form = False
                         st.success(f"Maintenance scheduled for {maintenance_date}")
                         time.sleep(1)
-                        st.experimental_rerun()
+                        st.rerun()
                     else:
                         st.error("Failed to schedule maintenance.")
-                
-                if cancel:
-                    st.session_state.show_maintenance_form = False
-                    st.experimental_rerun()
+            
+            if cancel:
+                st.session_state.show_maintenance_form = False
+                st.rerun()
 
 
 def add_device_form():
