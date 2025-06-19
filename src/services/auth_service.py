@@ -190,7 +190,7 @@ def register_user(
                 role=role,
                 phone=phone,
                 is_active=True,
-                created_at=datetime.datetime.utcnow(),
+                created_at=datetime.utcnow(),
             )
             db_session.add(new_user)
             db_session.commit()
