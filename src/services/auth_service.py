@@ -172,7 +172,7 @@ def authenticate_user(username, password):
 
 
 def register_user(
-    username, password, first_name, last_name, email, role="user", phone=None
+    username, password, first_name, last_name, email, role="End User", phone=None
 ):
     with get_db_session() as db_session:  # Use context manager properly
         try:
