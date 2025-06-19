@@ -1,15 +1,26 @@
 import streamlit as st
-from openai import OpenAI
 import os
 import json
 
+# Optional OpenAI import
+try:
+    from openai import OpenAI
+    OPENAI_AVAILABLE = True
+except ImportError:
+    OPENAI_AVAILABLE = False
+    OpenAI = None
+
 def get_openai_client():
     """Initialize OpenAI client with API key from secrets or environment"""
+    if not OPENAI_AVAILABLE:
+        st.warning("OpenAI library not installed. AI assistant features are disabled.")
+        return None
+        
     try:
         # Try to get API key from secrets first, then environment
         api_key = st.secrets.get("general", {}).get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
         if not api_key:
-            st.error("OpenAI API key not found. Please add it to .streamlit/secrets.toml")
+            st.warning("OpenAI API key not found. AI assistant features are disabled.")
             return None
         return OpenAI(api_key=api_key)
     except Exception as e:

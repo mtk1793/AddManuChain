@@ -1,8 +1,15 @@
 import streamlit as st
-from openai import OpenAI
 import os
 from src.components.ai_page_context import add_ai_page_context, get_ai_assistant_page_context
 from src.components.universal_css import inject_universal_css
+
+# Optional OpenAI import
+try:
+    from openai import OpenAI
+    OPENAI_AVAILABLE = True
+except ImportError:
+    OPENAI_AVAILABLE = False
+    OpenAI = None
 
 st.set_page_config(page_title="AI Assistant", page_icon="🤖", layout="wide")
 
@@ -28,16 +35,19 @@ if "ai_chat_history" not in st.session_state:
     st.session_state.ai_chat_history = []
 
 # Configure OpenAI API with new client-based approach
-try:
-    # Get API key from secrets or environment
-    api_key = st.secrets.get("general", {}).get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        st.error("OpenAI API key not found. Please add OPENAI_API_KEY to .streamlit/secrets.toml")
-        st.stop()
-    client = OpenAI(api_key=api_key)
-except Exception as e:
-    st.error(f"Failed to initialize OpenAI client: {e}")
-    st.stop()
+client = None
+if OPENAI_AVAILABLE:
+    try:
+        # Get API key from secrets or environment
+        api_key = st.secrets.get("general", {}).get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            st.warning("OpenAI API key not found. AI assistant features are disabled. Please add OPENAI_API_KEY to .streamlit/secrets.toml")
+        else:
+            client = OpenAI(api_key=api_key)
+    except Exception as e:
+        st.error(f"Failed to initialize OpenAI client: {e}")
+else:
+    st.warning("OpenAI library not installed. AI assistant features are disabled.")
 
 # Chat interface
 user_input = st.text_area(
@@ -51,6 +61,10 @@ col1, col2 = st.columns([1, 4])
 with col1:
     if st.button("🚀 Ask AI", type="primary"):
         if user_input.strip():
+            if not client:
+                st.error("AI assistant is not available. Please configure OpenAI API key.")
+                st.stop()
+                
             st.session_state.ai_chat_history.append({"role": "user", "content": user_input})
             try:
                 with st.spinner("🤖 AI is thinking..."):
@@ -112,6 +126,10 @@ with st.sidebar:
     
     for suggestion in suggestions:
         if st.button(suggestion, key=f"suggestion_{suggestion}"):
+            if not client:
+                st.error("AI assistant is not available. Please configure OpenAI API key.")
+                st.stop()
+                
             st.session_state.ai_chat_history.append({"role": "user", "content": suggestion})
             try:
                 with st.spinner("🤖 AI is thinking..."):
